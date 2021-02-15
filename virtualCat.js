@@ -17,8 +17,8 @@ export class virtualCat
     hunger = 2 ;            // faim
     thirst = 2 ;            // soif
     happiness = 2 ;         // joie
-    loneliness = 2 ;        // solitude
-    catBehaviour = 2 ;      // comportement de chat
+    // catBehaviour = 2 ;      // comportement de chat
+    // loneliness = 2 ;        // solitude
 
     // Statu du chat , comment il va
     goingWell = "well" ;
@@ -26,7 +26,7 @@ export class virtualCat
     goingSad = "sad" ;
     goingBad = "bad" ; 
 
-    status;
+    status = this.goingSad ;
 
     checkCatStatus()
     {

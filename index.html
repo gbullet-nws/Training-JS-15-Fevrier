@@ -25,25 +25,25 @@
         <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
         <button id="namingButton"> Choose its name </button>
 
-        <p> <span id="catNameDisplayed"> catNameDisplayed </span> is going <span> catStatus </span> </p> 
+        <p> <span id="catNameDisplayed"> catNameDisplayed </span> is going <span id="catGoingStatus"> catStatus </span> </p> 
 
         <div id="catStats">
 
             <li>
                 tiredness = <span id="tirednessLEVEL" onclick="sleep();"> x </span> //
-                <button id="catTIRED" onclick="sleep();"> Sleep</button>
+                <button id="catTIRED" onclick=" sleep(); updateDatas(); checkCatStatus(); "> Sleep </button>
             </li>
             <li>
                 hunger = <span id="hungerLEVEL"> x </span> //
-                <button id="catEATS" onclick="eat();" onclick="eat();"> Eat </button>
+                <button id="catEATS" onclick="eat(); updateDatas(); checkCatStatus();"> Eat </button>
             </li>
             <li>
                 loneliness = <span id="thirstLEVEL"> x </span> //
-                <button id="catDRINKS" onclick="drink();" onclick="drink();"> Drink </button>
+                <button id="catDRINKS" onclick="drink(); updateDatas(); checkCatStatus();"> Drink </button>
             </li>
             <li>
                 happiness = <span id="happinessLEVEL"> x </span> //
-                <button id="catHAPPINESS" onclick="drink();" onclick="play();"> Play </button>
+                <button id="catHAPPINESS" onclick="play(); updateDatas(); checkCatStatus();"> Play </button>
             </li>
 
         </div>

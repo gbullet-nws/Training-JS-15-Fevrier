@@ -23,10 +23,15 @@ document.getElementById("namingButton").addEventListener("click", () =>
     document.getElementById("happinessLEVEL").innerHTML = cat.happiness ;
 }) ;
 
-document.getElementById("namingButton").addEventListener("click", () =>
+function updateDatas()
 {
-    document.getElementById("catNameDisplayed").innerHTML = cat.name ;
-}) ;
+    document.getElementById("tirednessLEVEL").innerHTML = cat.tiredness ;
+    document.getElementById("hungerLEVEL").innerHTML = cat.hunger ;
+    document.getElementById("thirstLEVEL").innerHTML = cat.thirst ;
+    document.getElementById("happinessLEVEL").innerHTML = cat.happiness ;
+}
+
+document.getElementById("catGoingStatus").innerHTML = cat.status ;
 
 
 
