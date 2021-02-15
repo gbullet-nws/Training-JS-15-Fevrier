@@ -2,14 +2,14 @@ export class virtualCat
 {
     name ;                  // nom du chat 
 
-    constructor (name)      // construction du nom par Eiffage 
+    constructor(name)      // construction du nom
     {
-        this.name = name;
+        this.name = name ;
     }
 
-    catName()      // utilisation du nom entré en input
+    catName()               // utilisation du nom entré en input
     {   
-        this.name = document.getElementById("inputCatName");
+        this.name = inputCatName.value ;
     }
 
     // De 0 à 5 === stats de base 
@@ -19,6 +19,34 @@ export class virtualCat
     happiness = 2 ;         // joie
     loneliness = 2 ;        // solitude
     catBehaviour = 2 ;      // comportement de chat
+
+    // Statu du chat , comment il va
+    goingWell = "well" ;
+    goingNormal = "normal" ;
+    goingSad = "sad" ;
+    goingBad = "bad" ; 
+
+    status;
+
+    checkCatStatus()
+    {
+        if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 5 )
+        {
+            status = goingBad ;
+        }
+        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 10 )
+        {
+            status = goingSad ;
+        }
+        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 15 )
+        {
+            status = goingNormal ;
+        }
+        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 20 )
+        {
+            status = goingWell ;
+        }
+    }
 
     sleep()
     {
@@ -61,5 +89,4 @@ export class virtualCat
 
 }
 
-let cat = new virtualCat();
-console.log(cat.name) ;
+

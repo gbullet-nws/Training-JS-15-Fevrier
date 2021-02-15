@@ -11,6 +11,7 @@
 
         <script type="module" src="main.js"> </script>
         <script type="module" src="virtualCat.js"> </script>
+        <script type="text/javascript" src="exercice.js"> </script>
 
         <style> 
             body{ text-align: center; }
@@ -22,30 +23,27 @@
     <body>
 
         <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
-        <button onclick="catName();"> Nommer le chat </button>
+        <button id="namingButton"> Choose its name </button>
 
-        <p> <span> catName </span> is going <span> catStatus </span> </p> 
+        <p> <span id="catNameDisplayed"> catNameDisplayed </span> is going <span> catStatus </span> </p> 
 
         <div id="catStats">
 
             <li>
-                tiredness = <span> x </span>
-            </li> 
-            <button id="catEATS" onclick="catName();"> 
-            </button>
-            <li>
-                hunger = <span> x </span>
+                tiredness = <span id="tirednessLEVEL" onclick="sleep();"> x </span> //
+                <button id="catTIRED" onclick="sleep();"> Sleep</button>
             </li>
-            <button id="catEATS" onclick="catName();"> 
-            </button>
-
             <li>
-                loneliness = <span> x </span>
+                hunger = <span id="hungerLEVEL"> x </span> //
+                <button id="catEATS" onclick="eat();" onclick="eat();"> Eat </button>
             </li>
-            <button id="catEATS" onclick="catName();"> 
-            </button>
             <li>
-                happiness = <span> x </span>
+                loneliness = <span id="thirstLEVEL"> x </span> //
+                <button id="catDRINKS" onclick="drink();" onclick="drink();"> Drink </button>
+            </li>
+            <li>
+                happiness = <span id="happinessLEVEL"> x </span> //
+                <button id="catHAPPINESS" onclick="drink();" onclick="play();"> Play </button>
             </li>
 
         </div>
