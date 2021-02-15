@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Your virtual cat </title>
+
+        <script type="module" src="main.js"> </script>
+        <script type="module" src="virtualCat.js"> </script>
+
+        <style> 
+            body{ text-align: center; }
+            #catStats{ margin: 0 auto; }
+        </style>
+
+    </head>
+
+    <body>
+
+        <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
+        <button onclick="catName();"> Nommer le chat </button>
+
+        <p> <span> catName </span> is going <span> catStatus </span> </p> 
+
+        <div id="catStats">
+
+            <li>
+                tiredness = <span> x </span>
+            </li> 
+            <button id="catEATS" onclick="catName();"> 
+            </button>
+            <li>
+                hunger = <span> x </span>
+            </li>
+            <button id="catEATS" onclick="catName();"> 
+            </button>
+
+            <li>
+                loneliness = <span> x </span>
+            </li>
+            <button id="catEATS" onclick="catName();"> 
+            </button>
+            <li>
+                happiness = <span> x </span>
+            </li>
+
+        </div>
+
+    </body>
+
+</html>
