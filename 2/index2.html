@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Your virtual cat </title>
+
+        <script type="module" src="main.js"> </script>
+        <script type="module" src="virtualCat.js"> </script>
+        <script type="text/javascript" src="exercice.js"> </script>
+
+        <style> 
+            body{ text-align: center; }
+            #catStats{ margin: 0 auto; }
+        </style>
+
+    </head>
+
+    <body>
+
+        <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
+        <button id="namingButton"> Choose its name </button>
+
+        <p> <span id="catNameDisplayed"> catNameDisplayed </span> is going <span id="catGoingStatus"> catStatus </span> </p> 
+
+        <div id="catStats">
+
+            <li>
+                tiredness = <span id="tirednessLEVEL" onclick="sleep();"> x </span> //
+                <button id="catTIRED"> Sleep </button>
+            </li>
+            <li>
+                hunger = <span id="hungerLEVEL"> x </span> //
+                <button id="catEATS" onclick="eat();"> Eat </button>
+            </li>
+            <li>
+                loneliness = <span id="thirstLEVEL"> x </span> //
+                <button id="catDRINKS" onclick="drink();"> Drink </button>
+            </li>
+            <li>
+                happiness = <span id="happinessLEVEL"> x </span> //
+                <button id="catHAPPINESS" onclick="play();"> Play </button>
+            </li>
+
+        </div>
+
+    </body>
+
+</html>

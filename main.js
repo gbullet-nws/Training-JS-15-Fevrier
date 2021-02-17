@@ -3,36 +3,77 @@ import { virtualCat } from "./virtualCat.js"
 
 let cat = new virtualCat();
 
-document.getElementById("namingButton").addEventListener("click", () =>
+////----// Nommage du chat //----////
+namingButton.addEventListener("click", () =>
 {
-    cat.catName(inputCatName.value);
+    cat.catName();
+    dislayCatName();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
 
-    console.log(cat.name) ;
-});
+    console.log(cat.name);
+}) ;
 
-document.getElementById("namingButton").addEventListener("click", () =>
+function dislayCatName()
 {
     document.getElementById("catNameDisplayed").innerHTML = cat.name ;
-}) ;
+    document.getElementById("catNameDisplayed1").innerHTML = cat.name ;
+    document.getElementById("catNameDisplayed2").innerHTML = cat.name ;
+}
 
-document.getElementById("namingButton").addEventListener("click", () =>
+
+////----// Modifier stats chat //----////
+// Events de click sur les boutons //
+catTIRED.addEventListener("click", () =>
 {
-    document.getElementById("tirednessLEVEL").innerHTML = cat.tiredness ;
-    document.getElementById("hungerLEVEL").innerHTML = cat.hunger ;
-    document.getElementById("thirstLEVEL").innerHTML = cat.thirst ;
-    document.getElementById("happinessLEVEL").innerHTML = cat.happiness ;
-}) ;
+    cat.sleep();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
+})
+catEATS.addEventListener("click", () =>
+{
+    cat.eat();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
+})
+catDRINKS.addEventListener("click", () =>
+{
+    cat.drink();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
+})
+catBEHAVIOUR.addEventListener("click", () =>
+{
+    cat.play();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
+})
+catLONELINESS.addEventListener("click", () =>
+{
+    cat.play();
+    cat.checkCatHealth();
+    cat.checkCatHappiness();
+    updateDatas();
+})
 
+
+
+////----// Fonction updateDatas //----////
 function updateDatas()
 {
     document.getElementById("tirednessLEVEL").innerHTML = cat.tiredness ;
     document.getElementById("hungerLEVEL").innerHTML = cat.hunger ;
     document.getElementById("thirstLEVEL").innerHTML = cat.thirst ;
-    document.getElementById("happinessLEVEL").innerHTML = cat.happiness ;
+
+    document.getElementById("catBehaviourLEVEL").innerHTML = cat.catBehaviour ;
+    document.getElementById("lonelinessLEVEL").innerHTML = cat.loneliness ;
+
+    document.getElementById("catHealthStatus").innerHTML = cat.healthStatus ;
+    document.getElementById("catHappinessStatus").innerHTML = cat.goingStatus ;
 }
 
-document.getElementById("catGoingStatus").innerHTML = cat.status ;
-
-
-
-console.log(cat.name) ;

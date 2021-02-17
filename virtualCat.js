@@ -1,6 +1,6 @@
 export class virtualCat
 {
-    name ;                  // nom du chat 
+    name ;                 // nom du chat 
 
     constructor(name)      // construction du nom
     {
@@ -12,48 +12,85 @@ export class virtualCat
         this.name = inputCatName.value ;
     }
 
-    // De 0 à 5 === stats de base 
+    ////----// Health du chat //----////
+    // santé = fatigue + faim + soif 
     tiredness = 2 ;         // fatigue
     hunger = 2 ;            // faim
     thirst = 2 ;            // soif
-    happiness = 2 ;         // joie
-    // catBehaviour = 2 ;      // comportement de chat
-    // loneliness = 2 ;        // solitude
+    health = this.tiredness + this.hunger + this.thirst           // santé globale
+    // Santé du chat 
+    athleticShape = "athletic shape" ;
+    goodShape = "good shape" ;
+    normalShape = " normal shape" ;
+    badShape = "bad shape" ; 
 
-    // Statu du chat , comment il va
+    healthStatus ;              // statu de santé du chat
+
+
+    ////----// Happiness du chat //----////
+    // bonheur = comportementDeChat - solitude
+    catBehaviour = 2 ;      // comportement de chat
+    loneliness = 2 ;        // solitude
+    happiness = this.catBehaviour - this.loneliness ;             // joie
+    // Contentement du chat 
+    goingLikeACat = "like a cat" ;
     goingWell = "well" ;
     goingNormal = "normal" ;
-    goingSad = "sad" ;
-    goingBad = "bad" ; 
+    goingSad = "sad" ; 
 
-    status = this.goingSad ;
+    happinessStatus ;           // statu de joie du chat
 
-    checkCatStatus()
+
+    ////----// Fonction de check du statu du chat //----//// 
+    checkCatHealth()
     {
-        if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 5 )
+        if ( this.health <= 4 )
         {
-            status = goingBad ;
+            this.healthStatus = this.athleticShape ;
         }
-        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 10 )
+        else if ( this.health <= 8 )
         {
-            status = goingSad ;
+            this.healthStatus = this.goodShape ;
         }
-        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 15 )
+        else if ( this.health <= 12 )
         {
-            status = goingNormal ;
+            this.healthStatus = this.normalShape ;
         }
-        else if ( (this.tiredness + this.hunger + this.thirst + this.happiness) <= 20 )
+        else if ( this.health <= 16 )
         {
-            status = goingWell ;
+            this.healthStatus = this.badShape ;
         }
     }
+
+    ////----// Fonction de check du statu du chat //----//// 
+    checkCatHappiness()
+    {
+        if ( this.happiness <= 4 )
+        {
+            this.happinessStatus = this.goingSad ;
+        }
+        else if ( this.happiness <= 8 )
+        {
+            this.happinessStatus = this.goingNormal ;
+        }
+        else if ( this.happiness <= 12 )
+        {
+            this.happinessStatus = this.goingWell ;
+        }
+        else if ( this.happiness <= 16 )
+        {
+            this.happinessStatus = this.goingLikeACat ;
+        }
+    }
+
+    ////----//-------------------//----////
+    ////----// Fonctions de jeu //----//// 
+    ////----//-------------------//----////
 
     sleep()
     {
         this.tiredness -= 1 ;
-        this.loneliness += 1 ;
         console.log( "tiredness = " + this.tiredness ) ;
-        console.log( "loneliness = " + this.loneliness ) ;
     }
     eat()
     {
@@ -71,20 +108,35 @@ export class virtualCat
         this.tiredness += 1 ;
         this.hunger += 1 ;
         this.thirst += 1 ;
+        this.happiness += 1 ;
 
         console.log( "tiredness = " + this.tiredness ) ;
         console.log( "hunger = " + this.hunger ) ;
         console.log( "thirst = " + this.thirst ) ;
+        console.log( "happiness = " + this.happiness)
     }
     hunt()
     {
         this.tiredness += 1 ;
-        this.loneliness -= 1;
+        this.hunger -= 1 ;
+        this.thirst -= 1 ;
+
+        this.loneliness += 1;
         this.catBehaviour += 1 ;
 
         console.log( "tiredness = " + this.tiredness ) ;
+        console.log( "hunger = " + this.hunger ) ;
+        console.log( "thirst = " + this.thirst ) ;
         console.log( "loneliness = " + this.loneliness ) ;
         console.log( "catBehaviour = " + this.catBehaviour ) ;
+    }
+    findAnOtherCat()
+    {
+        this.loneliness -= 1 ;
+        this.catBehaviour += 1 ;
+
+        console.log( "loneliness = " + this.loneliness) ;
+        console.log( "catBehaviour = " + this.catBehaviour) ;
     }
 
 }

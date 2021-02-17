@@ -11,7 +11,8 @@
 
         <script type="module" src="main.js"> </script>
         <script type="module" src="virtualCat.js"> </script>
-        <script type="text/javascript" src="exercice.js"> </script>
+        <!-- <script type="text/javascript" src="exercice.js"> </script> -->
+        <!-- <script type="text/javascript" src="exerciceDuJour"></script> -->
 
         <style> 
             body{ text-align: center; }
@@ -25,28 +26,47 @@
         <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
         <button id="namingButton"> Choose its name </button>
 
-        <p> <span id="catNameDisplayed"> catNameDisplayed </span> is going <span id="catGoingStatus"> catStatus </span> </p> 
+        <hr>
 
-        <div id="catStats">
+        <p id="catNameDisplayed"> The cat </p> 
 
-            <li>
-                tiredness = <span id="tirednessLEVEL" onclick="sleep();"> x </span> //
-                <button id="catTIRED" onclick=" sleep(); updateDatas(); checkCatStatus(); "> Sleep </button>
-            </li>
-            <li>
-                hunger = <span id="hungerLEVEL"> x </span> //
-                <button id="catEATS" onclick="eat(); updateDatas(); checkCatStatus();"> Eat </button>
-            </li>
-            <li>
-                loneliness = <span id="thirstLEVEL"> x </span> //
-                <button id="catDRINKS" onclick="drink(); updateDatas(); checkCatStatus();"> Drink </button>
-            </li>
-            <li>
-                happiness = <span id="happinessLEVEL"> x </span> //
-                <button id="catHAPPINESS" onclick="play(); updateDatas(); checkCatStatus();"> Play </button>
-            </li>
-
+        <div id="catHealthStats">
+            <p>
+                tiredness = <span id="tirednessLEVEL"> x </span> 
+                <button id="catTIRED" > Sleep </button>
+            </p>
+            <p>
+                hunger = <span id="hungerLEVEL"> x </span> 
+                <button id="catEATS"> Eat </button>
+            </p>
+            <p>
+                thirst = <span id="thirstLEVEL"> x </span> 
+                <button id="catDRINKS"> Drink </button>
+            </p> 
         </div>
+        <br>
+        <div id="catHappinessStats">
+            <p> 
+                cat fun = <span id="playingLEVEL"> x </span>  
+                <button id="catPLAYING"> Play </button>
+            </p>
+            <p> 
+                cat behaviour = <span id="catBehaviourLEVEL"> x </span>  
+                <button id="catBEHAVIOUR"> Hunt </button>
+            </p>
+            <p> 
+                loneliness = <span id="lonelinessLEVEL"> x </span>  
+                <button id="catLONELINESS"> Find an other cat </button>
+            </p>  
+        </div>
+        
+        <div id="catHealthAndStatus">
+            <p> <span class="catNameDisplayed1"> The cat </span> is in : <span id="catHealthStatus"> some shape </span> </p> 
+            <p> <span class="catNameDisplayed2"> The cat </span> is going : <span id="catHappinessStatus"> somehow </span> </p>
+        </div>
+
+
+    
 
     </body>
 
