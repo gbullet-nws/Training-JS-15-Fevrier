@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> Your virtual cat </title>
+
+        <script type="module" src="main.js"> </script>
+        <script type="module" src="virtualCat.js"> </script>
+        <!-- <script type="text/javascript" src="exercice.js"> </script> -->
+        <!-- <script type="text/javascript" src="exerciceDuJour"></script> -->
+
+        <style> 
+            body{ text-align: center;}
+            #catStats{ margin: 0 auto; }
+        </style>
+
+    </head>
+
+    <body>
+
+        <input id="inputCatName" placeholder="Name your virtual Cat" style="text-align: center;"> </input>
+        <button id="namingButton"> Choose its name </button>
+
+        <hr>
+
+        <p id="catNameDisplayed"> The cat </p> 
+
+        <div id="catHealthStats">
+            <p>
+                tiredness = <span id="tirednessLEVEL"> x </span> 
+                <button id="catTIRED" > Sleep </button>
+            </p>
+            <p>
+                hunger = <span id="hungerLEVEL"> x </span> 
+                <button id="catEATS"> Eat </button>
+            </p>
+            <p>
+                thirst = <span id="thirstLEVEL"> x </span> 
+                <button id="catDRINKS"> Drink </button>
+            </p> 
+        </div>
+        <br>
+        <div id="catHappinessStats">
+            <p> 
+                cat fun = <span id="playingLEVEL"> x </span>  
+                <button id="catPLAYING"> Play </button>
+            </p>
+            <p> 
+                cat behaviour = <span id="catBehaviourLEVEL"> x </span>  
+                <button id="catBEHAVIOUR"> Hunt </button>
+            </p>
+            <p> 
+                loneliness = <span id="lonelinessLEVEL"> x </span>  
+                <button id="catLONELINESS"> Find an other cat </button>
+            </p>  
+        </div>
+        
+        <div id="catHealthAndStatus">
+            <p> <span class="catNameDisplayed1"> The cat </span> is in : <span id="catHealthStatus"> some shape </span> </p> 
+            <p> <span class="catNameDisplayed2"> The cat </span> is going : <span id="catHappinessStatus"> somehow </span> </p>
+        </div>
+
+
+    
+
+    </body>
+
+</html>
